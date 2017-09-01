@@ -1,0 +1,173 @@
+\documentclass{include/thesisclass}
+% Main File - Based on thesisclass.cls
+% Comments are mostly in English
+% ------------------------------------------------------------------------------
+% Further files in folder:
+%  - include/cmds.tex (for macros and additional commands)
+%  - include/kitlogo.pdf (for titlepage)
+%  - lit.bib (bibtex bibliography database)
+%  - include/titlepage.tex (for layout of titelpage)
+% ------------------------------------------------------------------------------
+% Useful Supplied Packages:
+% amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
+% siunitx, varioref, booktabs, graphicx, tikz, multicol
+
+
+
+
+
+%% -------------------------
+%% |    Thesis Settings    |
+%% -------------------------
+% english or ngerman (new german für neue deutsche Rechtschreibung statt german)
+\SelectLanguage{english}
+% details on this thesis
+\newcommand{\thesisauthor}{Chenran Xu}
+\newcommand{\thesistopic}{Untersuchung der Langzeitstabilität des EDELWEISS Myon-Veto-Systems}
+\newcommand{\thesisentopic}{Investigation of the long term stability of the EDELWEISS muon veto system}
+\newcommand{\thesislongtopic}{Very long and very detailed description of the very interesting thesis topic (only necessary for pdfsubject tag).}
+\newcommand{\thesisinstitute}{Institut für Experimentelle Kernphysik}
+\newcommand{\thesisreviewerone}{Prof. Dr. D. Cay}
+\newcommand{\thesisreviewertwo}{Prof. Dr. E. Vil}
+\newcommand{\thesisadvisorone}{} % to use: enter names and uncomment in titlepg
+\newcommand{\thesisadvisortwo}{}
+\newcommand{\thesistimestart}{01.04.2015} % on titlepage
+\newcommand{\thesistimeend}{30.09.2015} % on titlepage
+\newcommand{\thesistimehandin}{30.09.2015} % on second page 'preamble'
+\newcommand{\thesispagehead}{Bachelor Thesis: \thesisentopic} % page heading
+
+
+
+
+
+%% ---------------------
+%% |    PDF - Setup    |
+%% ---------------------
+% This information will appear embed into the PDF file as meta data, but will
+% not be printed anywhere
+\hypersetup
+{
+    pdfauthor={\thesisauthor},
+    pdftitle={Bachelorarbeit: \thesistopic},
+    pdfsubject={\thesislongtopic},
+    pdfkeywords={kit,physik,bachelor,thesis,\thesisauthor}
+}
+
+
+
+
+
+%% --------------------------------------
+%% |    Settings for Word Separation    |
+%% --------------------------------------
+% Help for separation:
+% In German package the following hints are additionally available:
+% "- = Additional separation
+% "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
+% "~ = Hyphenation without separation (e.g. bergauf und "~ab)
+% "= = Hyphenation with separation before and after
+% "" = Separation without a hyphenation (e.g. und/""oder)
+
+% Describe separation hints here:
+\hyphenation
+{
+    über-nom-me-nen an-ge-ge-be-nen
+    %Pro-to-koll-in-stan-zen
+    %Ma-na-ge-ment  Netz-werk-ele-men-ten
+    %Netz-werk Netz-werk-re-ser-vie-rung
+    %Netz-werk-adap-ter Fein-ju-stier-ung
+    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+    %Kon-troll-in-stanz
+}
+
+
+
+
+
+%% -----------------------
+%% |    Main Document    |
+%% -----------------------
+\usepackage{lipsum} % for Lorem Ipsum text example
+\begin{document}
+    % Titlepage and ToC
+    \FrontMatter
+
+    \input{include/titlepage}
+    \input{include/preamble}
+
+    \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
+    \tableofcontents                    % listoftables on new pages
+    \listoffigures
+    \listoftables
+    \endgroup
+    \cleardoublepage
+
+
+
+    % Contents
+    \MainMatter
+
+    \chapter{Introduction}
+    some introduction &
+    outline
+    \chapter{WIMPs-search with EDELWEISS-III Experiment}
+      \section{Evidences of dark matter}
+      kinematic, interaction.
+      \section{WIMP as dark matter candidate}
+
+      \section{EDELWEISS-III Experiment}
+        \subsection{Experimental setup}
+        \subsection{Backgrounds at EDELWEISS Experiment}
+
+    \chapter{Detection of muons in EDELWEISS-III Experiment}
+      \section{Muon veto system}
+        \subsection{Experimental setup}
+        \subsection{Energy deposit of muon in the scintillator module}
+        \subsection{Working Principle}
+          electronics
+
+    \chapter{Analysis of the long term measurement data}
+      \section{(Determination of the aging effect using) LED events}
+        \subsection{Data selection}
+          cut criterium
+        \subsection{}
+
+      \section{Muon events}
+        \subsection{Data selection}
+        \subsection{Analysis of MPV of Landau-Specturm}
+      \section{Muon Detection Efficiency}
+        \subsection{Effective trigger threshold}
+         methods used,
+    \chapter{Conclusions}
+
+
+
+
+    %\emptychapter[3]{ROOT Routines}     % usage: \emptychapter[page displayed
+                                        %        in toc]{name of the chapter}
+
+
+    % appendix for more or less interesting calculations
+    \Appendix
+    \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
+    % to make the appendix appear in ToC without number. \appendixname =
+    % Appendix or Anhang (depending on chosen language)
+    % \input{./chap/appendix.tex} %\cleardoublepage
+
+
+
+    % Bibliography
+    \TheBibliography
+
+    % BIBTEX
+    % use if you want citations to appear even if they are not referenced to:
+    % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
+    %\nocite{*}
+    \bibliographystyle{babalpha}
+    \bibliography{lit.bib}
+
+    % THEBIBLIOGRAPHY
+    %\begin{thebibliography}{000}
+    %    \bibitem{ident}Entry into Bibliography.
+    %\end{thebibliography}
+\end{document}
