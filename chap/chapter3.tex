@@ -48,6 +48,14 @@ In addition to the fluctuation of the muon energy deposit, the light output is a
 \end{equation}
 The $\Lambda_{\mathrm{eff}}$ denotes the effective attenuation length and is a detector specific constant.
 The scintillator modules in EDELWEISS were previously used in KARMEN experiment. The effective attenuation length was measured to be $\mathrm{\Lambda} \approx \SI{600}{cm}$ in 1997/1998 \cite{Rei98}. However, the modules has aged since then. Some of the effects are radiation damages and decrease of the transparency.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.6\textwidth{}]{./fig/pos-dependent.png}
+  \caption{Light measured in the north and south PMT groups of Module 5 and the sum of them. The data are fitted with exponential curves. Extracted from \cite{Hab04}.}
+  \label{fig:pos-dependent}
+\end{figure}
+
 In 2003/2004 the attenuation length of two $\SI{4}{m}$ modules were measured. Fig. shows the measured signal in M5 for two individual PMT groups and the sum of them. As shown in the figure, the light yield varies by a factor of 2 from the near end to far end.
 For M5 $\Lambda_{\mathrm{eff}}$ was around $\SI{340}{cm}$ and for M1 around $\SI{200}{cm}$ \cite{Hab04}. The measurement shows that the effective attenuation length of scintillator modules has decreased significantly since production, which leads to a decrease of discrimination efficiency for low energy events. This also motivates the importance to analyze the long term stability of the muon-veto system.
 
@@ -55,5 +63,28 @@ For M5 $\Lambda_{\mathrm{eff}}$ was around $\SI{340}{cm}$ and for M1 around $\SI
 \subsection{Available Data of the Muon-Veto Run}
 
 The measured events are stored in data files and combined to so-called Runs. Each Run contains up to 99 files, with each file stores 8 hours measurement. The data in each Run file are converted to a KData file. KData is a ROOT-based \cite{Bru97} data structure and analysis toolkit developed at KIT. It combines the muon-veto data and the bolometer data for coincidence studies \cite{Cox12}.
+The data branches relevent in the context of this work and available for the analysis are listed below:
+\begin{itemize}
+  \item ADC
+  When triggered, the integrated signal in each PMT group is stored in ADC units. The HVs of each PMT group are calibrated before the experiment to ensure an uniform gain of each module. Since the modules have aged individually, the correspondence between ADC channels and Energy in MeV varies from module to module. There is also a conversion threshold. For an event with energy deposit under this value, the ADC is not stored and set to -1. The threshold is ~120\,ADC channels and differs from each other.
+
+  \item TDC
+  The arrive time of signal in each PMT group is stored. By substracting the two TDC values in one module, the event postion can be reconstructed. In the presented work, the TDC values are only used to probe if a PMT group is triggered.
+
+
+  \item{PC Time}
+  The time of each event are stored in seconds. For the muon-veto events to be compared with bolometer events, an additional timestamp in 10\,\upmu{}s precision is saved. However, such precision is of no interest in analysis of the long term stability. Therefore, the event time in seconds is used in the following analysis.
+
+  \item{DistanceEst,DistanceNemo}
+  As described before, the gap size of the upper part of the system is measured every 15 miniutes. DistanceEst stores the distance from eastern wall to M8 and DistanceNemo stores the distance from western wall to M6. For each event, the distances obtained from last laser measurement are saved.
+
+  \item{IsLEDFired}
+  The LEDs installed on extra top modules fire every eight hours to monitor the stability of the system. When the event is caused by LED firing, the bool value IsLEDFired will be set to true, allowing a distinction between LED events and other events.
+\end{itemize}
+
+
+
+
+
 
 %available values
