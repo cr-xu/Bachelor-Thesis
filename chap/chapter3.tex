@@ -6,10 +6,10 @@ Despite the rock overburden of LSM reduces the cosmic muon flux by 6 orders of m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Setup of the Muon veto system}
+\section{Setup of the \mvs}
 \label{sec:muon-setup}
 
-The muon-veto system is the outermost layer of shieldings and covers a surface of $\SI{100}{m^{2}}$. As shown in the fig. \ref{fig:muon-setup}, it is made of 46 plastic scintillator modules. The modules are labelled from 1 to 48. Each wall is labelled according to the orientation. The western wall is named "Nemo", which is the name of the neighbour experiment in LSM.
+The \mvs is the outermost layer of shieldings and covers a surface of $\SI{100}{m^{2}}$. As shown in the fig. \ref{fig:muon-setup}, it is made of 46 plastic scintillator modules. The modules are labelled from 1 to 48. Each wall is labelled according to the orientation. The western wall is named "Nemo", which is the name of the neighbour experiment in LSM.
 The muon-veto is divided in two levels, the upper level made of 30 modules locates in a clean room and host the cryostat and the detectors. The lower level has 16 modules. As described in section \ref{sec:edw-exp}, the upper level is mounted on rails and can be opened in two parts to grant access to electronics.
 
 \begin{figure}[ht!]
@@ -39,8 +39,8 @@ The total energy deposit of muon is also dependent on its path length in a modul
 It is also possible that a muon goes through the edge of a module, which is called a \textit{grazing muon}. In such case, the muon traverses only partly the module thickness and deposits lower energy.
 
 \subsection{Readout electronic chain}
-The data acquisition of the muon-veto system is independent from the bolometer. The muon-veto is only rarely switched off when operation in the clean romm is taken place.
-When a muon goes through the scintillator modules, it deposits energy via different processes and products scintillation lights. The photons reflect in the module and are guided to the PMT groups. In a PMT group, the photons are then converted to electrons and amplified to a measurable electric signal. Once the signal amplitude is over the trigger threshold, the signal is integrated in the Analog-to-Digital-Converter (ADC) card to obtain the total energy deposit of muon in a module. At the mean time, the Time-to-Digital-Converter (TDC) card stores the time of the signal. If there is a coincidence of 2 PMT groups within $\SI{100}{ns}$ time window, all non-zero signals of the muon-veto system are stored as one event. After the triggering, there is dead-time of $\tau=\SI{0.16}{ms}$ when no events can be detected \cite{Sch13b}. The trigger threshold is set to $\SI{150}{mV}$ to ensure the detection efficiency of low energy events without introducing too much dead-time.
+The data acquisition of the \mvs is independent from the bolometer. The muon-veto is only rarely switched off when operation in the clean romm is taken place.
+When a muon goes through the scintillator modules, it deposits energy via different processes and products scintillation lights. The photons reflect in the module and are guided to the PMT groups. In a PMT group, the photons are then converted to electrons and amplified to a measurable electric signal. Once the signal amplitude is over the trigger threshold, the signal is integrated in the Analog-to-Digital-Converter (ADC) card to obtain the total energy deposit of muon in a module. At the mean time, the Time-to-Digital-Converter (TDC) card stores the time of the signal. If there is a coincidence of 2 PMT groups within $\SI{100}{ns}$ time window, all non-zero signals of the \mvs are stored as one event. After the triggering, there is dead-time of $\tau=\SI{0.16}{ms}$ when no events can be detected \cite{Sch13b}. The trigger threshold is set to $\SI{150}{mV}$ to ensure the detection efficiency of low energy events without introducing too much dead-time.
 
 \subsection{Position-dependent light output}
 In addition to the fluctuation of the muon energy deposit, the light output is also dependent on the position of the interaction in the scintillator modules. Since the light is guided up to $\SI{4}{m}$ to the PMT group, which is much larger than the attenuation length, the light measured by PMT decreases exponentially with the path length $d$. The relation can be aprroximately determined by the Beer-Lambert law:
@@ -58,10 +58,10 @@ The scintillator modules in EDELWEISS were previously used in KARMEN experiment.
 \end{figure}
 
 In 2003/2004 the attenuation length of two $\SI{4}{m}$ modules were measured. Fig. shows the measured signal in M5 for two individual PMT groups and the sum of them. As shown in the figure, the light yield varies by a factor of 2 from the near end to far end.
-For M5 $\Lambda_{\mathrm{eff}}$ was around $\SI{340}{cm}$ and for M1 around $\SI{200}{cm}$ \cite{Hab04}. The measurement shows that the effective attenuation length of scintillator modules has decreased significantly since production, which leads to a decrease of discrimination efficiency for low energy events. This also motivates the importance to analyze the long term stability of the muon-veto system.
+For M5 $\Lambda_{\mathrm{eff}}$ was around $\SI{340}{cm}$ and for M1 around $\SI{200}{cm}$ \cite{Hab04}. The measurement shows that the effective attenuation length of scintillator modules has decreased significantly since production, which leads to a decrease of discrimination efficiency for low energy events. This also motivates the importance to analyze the long term stability of the \mvs.
 
 
-\subsection{Available Data of the Muon-Veto Run}
+\subsection{Available information of the muon-veto events}
 
 The measured events are stored in data files and combined to so-called Runs. Each Run contains up to 99 files, with each file stores 8 hours measurement. Tha means, oen Run file usually contains data of one month measurement. The data in each Run file are converted to a \textit{KData} file. \textit{KData} is a ROOT-based \cite{Bru97} data structure and analysis toolkit developed at KIT. It combines the muon-veto data and the bolometer data for coincidence studies \cite{Cox12}.
 The data branches relevent in the context of this work and available for the analysis are listed below:
