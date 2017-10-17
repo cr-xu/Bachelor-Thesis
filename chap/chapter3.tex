@@ -9,7 +9,7 @@ Despite the rock overburden of LSM which reduces the cosmic muon flux by 6 order
 \section{Setup of the \mvs}
 \label{sec:muon-setup}
 
-The \mvs is the outermost layer of shieldings and covers a surface of $\SI{100}{m^{2}}$. As shown in the fig. \ref{fig:muon-setup}, it is made of 46 plastic scintillator modules. The modules are labelled from 1 to 48. Each wall is labelled according to the orientation. The western wall is named "Nemo", which is the name of the neighbour experiment in LSM.
+The \mvs{} is the outermost layer of shieldings and covers a surface of $\SI{100}{m^{2}}$. As shown in the fig. \ref{fig:muon-setup}, it is made of 46 plastic scintillator modules. The modules are labelled from 1 to 48. Each wall is labelled according to the orientation. The western wall is named "Nemo", which is the name of the neighbour experiment in LSM.
 The muon-veto is divided in two levels, the upper level made of 30 modules is located in a clean room which hosts the cryostat and the detectors. The lower level has 16 modules. As described in section \ref{sec:edw-exp}, the upper level is mounted on rails and can be opened in two parts to grant access to electronics and the cryostat.
 
 \begin{figure}[ht!]
@@ -19,7 +19,7 @@ The muon-veto is divided in two levels, the upper level made of 30 modules is lo
   \label{fig:muon-setup}
 \end{figure}
 
-To cover the gap, additional modules M7, M8, M15 and M16 were installed in 2010. The four extra modules are equipped with LEDs to monitor the stability of the system. M7 and M8 have 3 LEDs along their axis, each of M15 and M16 has one LED installed in the middle. M7 and M8 are $\SI{2.1}{m}$ long. M15 and M16 are around $\SI{1}{m}$ long and cover only partly the opening of the upper part.
+To cover the gap resulted from an extension of the cryogenic support line, additional modules M7, M8, M15 and M16 were installed in 2010. The four extra modules are equipped with LEDs to monitor the stability of the system. M7 and M8 have 3 LEDs along their axis, each of M15 and M16 has one LED installed in the middle. M7 and M8 are $\SI{2.1}{m}$ long. M15 and M16 are around $\SI{1}{m}$ long and cover only partly the opening of the upper part.
 
 All modules have a width of $\SI{65}{cm}$ and a thickness of $\SI{5}{cm}$. Their lengths vary from $\SI{2}{m}$ to $\SI{4}{m}$.
 Due to the opening for electronics and the shorter length of some modules, the overall geometric coverage is 98\%. However, a muon going through the gap can partly be detected via the particle showers induced by it or at its exit hitting another module.
@@ -39,8 +39,8 @@ The total energy deposit of muon is also dependent on its path length in a modul
 It is also possible that a muon goes through the edge of a module, which is called a \textit{grazing muon}. In such case, the muon traverses only partly the module thickness and deposits lower energy.
 
 \subsection{The electronic readout chain}
-The data acquisition of the \mvs is independent from the bolometer. The muon-veto is only rarely switched off when operation in the clean room is taking place.
-When a muon goes through the scintillator modules, it deposits energy via different processes and produces scintillation light. The photons reflect in the module and are guided to the PMT groups. In a PMT group, the photons are then converted to electrons and amplified to a measurable electric signal. Once the signal amplitude is over the trigger threshold, the signal is integrated in the Analog-to-Digital-Converter (ADC) card to obtain the total energy deposit of a muon in a module. At the mean time, the Time-to-Digital-Converter (TDC) card stores the time of the signal. If there is a coincidence of 2 PMT groups within a $\SI{100}{ns}$ time window, all non-zero signals of the \mvs are stored as one event. After the triggering, there is a dead-time of $\tau=\SI{0.16}{ms}$ when no events can be detected \cite{Sch13b}. The trigger threshold is set to $\SI{150}{mV}$ to ensure the detection efficiency of low energy events without introducing too much dead-time.
+The data acquisition of the \mvs{} is independent from the bolometer. The muon-veto is only rarely switched off when operation in the clean room is taking place.
+When a muon goes through the scintillator modules, it deposits energy via different processes and produces scintillation light. The photons reflect in the module and are guided to the PMT groups. In a PMT group, the photons are then converted to electrons and amplified to a measurable electric signal. Once the signal amplitude is over the trigger threshold, the signal is integrated in the Analog-to-Digital-Converter (ADC) card to obtain the total energy deposit of a muon in a module. At the mean time, the Time-to-Digital-Converter (TDC) card stores the time of the signal. If there is a coincidence of 2 PMT groups within a $\SI{100}{ns}$ time window, all non-zero signals of the \mvs{} are stored as one event. After the triggering, there is a dead-time of $\tau=\SI{0.16}{ms}$ when no events can be detected \cite{Sch13b}. The trigger threshold is set to $\SI{150}{mV}$ to ensure the detection efficiency of low energy events without introducing too much dead-time.
 
 \subsection{Position-dependent light output}
 In addition to the fluctuation of the muon energy deposit, the light output is also dependent on the position of the interaction in the scintillator modules. Since the light is guided up to $\SI{4}{m}$ to the PMT group, which is much larger than the attenuation length, the light measured by PMT decreases exponentially with the path length $d$. The relation can be approximately determined by the Beer-Lambert law:
@@ -58,7 +58,7 @@ The scintillator modules in EDELWEISS were previously used in the KARMEN experim
 \end{figure}
 
 In 2003/2004, the attenuation lengths of two $\SI{4}{m}$ modules were measured. Fig.\ \ref{fig:pos-dependent} shows the measured signal in M5 for two individual PMT groups and the sum of them. As shown in the figure, the light yield varies by a factor of 2 from the near end to far end.
-For M5 $\Lambda_{\mathrm{eff}}$ was around $\SI{340}{cm}$ and for M1 around $\SI{200}{cm}$ \cite{Hab04}. The measurement shows that the effective attenuation length of scintillator modules has decreased significantly since production, which leads to a decrease of discrimination efficiency for low energy events. This also motivates the importance to analyze the long term stability of the \mvs.
+For M5 $\Lambda_{\mathrm{eff}}$ was around $\SI{340}{cm}$ and for M1 around $\SI{200}{cm}$ \cite{Hab04}. The measurement shows that the effective attenuation length of scintillator modules has decreased significantly since production, which leads to a decrease of discrimination efficiency for low energy events. This also motivates the importance to analyze the long term stability of the \mvs{}.
 
 
 \subsection{Available information of the muon-veto events}

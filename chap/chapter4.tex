@@ -1,6 +1,6 @@
 % chapter4.tex
 % LED Chapter (Muon?)
-As described in Chapter \ref{chap:muon}, the four extra modules added in 2010 covering the gap of the \mvs are equipped with LEDs. M7 and M8 have three LEDs: one at the center and the other two symmetrically at the end. M15 and M16 both have one LED installed at the center. The LEDs send out pulses every eight hours. The LED data are used to perform a stability control of the \mvs. They are clearly defined in light emission, position and time comparing to muon induced events, therefore the LED events are a good probe to estimate the long term stability of these four modules.
+As described in Chapter \ref{chap:muon}, the four extra modules added in 2010 covering the gap of the \mvs{} are equipped with LEDs. M7 and M8 have three LEDs: one at the center and the other two symmetrically at the end. M15 and M16 both have one LED installed at the center. The LEDs send out pulses every eight hours. The LED data are used to perform a stability control of the \mvs{}. They are clearly defined in light emission, position and time comparing to muon induced events, therefore the LED events are a good probe to estimate the long term stability of these four modules.
 \section{Data selection}
 For the following analyses, data of muon-veto Run70 to Run138 are used to analyze the aging effect of the veto system. This corresponds to a date from 24.08.2010 to 28.03.2017. When converting the raw data to ROOT-format, the events induced by LED firing are flagged. Therefore, they are easily separated from other events.
 The LEDs fire three times every day. Each LED fires 60 pulses in one minute and they fire one after another, which also allows a separation of signals from different LEDs in M7 and M8.
@@ -8,6 +8,7 @@ The LEDs fire three times every day. Each LED fires 60 pulses in one minute and 
 
 
 \section{Data Analysis}
+\label{sec:led-ana}
 The LEDs are fixed on the modules, so the energy spectrum is not smeared by the position dependent light readout. Also, the LEDs are supposed to have constant light output over a short time. Thus the obtained ADC spectrum can be fitted with a gaussian function to get the average ADC values of several series.
 To increase the statistical power of a single point, events of nine shot series (three days) are combined to perform a gaussian fit. An example of such fit is illustrated in fig.\ref{fig:gaussian-fit}.
 
@@ -47,14 +48,14 @@ As can be seen in the figure, the mean ADC values of the two off-center LEDs dif
 
 In fig.\ref{fig:M8LED}, the error bar of a single data point is the statistical uncertainty given by the gaussian fit. Since most LED events in one fire series have good gaussian form, the statistical uncertainty is mostly much smaller than the total uncertainty. Several other effects lead to the fluctuation of the ADC value, for example, the switch-on effect of electronics after a long pause. Consequently, the systematic uncertainty can only be approximated. The result of the linear fits are listed in Tab.\ref{tab:led} with uncertainty. The systematic uncertainty of the slope is estimated by fitting different parts of the time period and taking the difference of the maximum and minimum slopes.
 
-\subsection{Interpretaion of the results}
+\subsection{Interpretation of the results}
 
 
 Various effects could lead to the decrease or even increase of the mean ADC value of LED events. First, the transparency of plastic scintillator decreases over time. Assuming that such aging effect is homogeneous in one module, the loss of light output depends on the distance from the event position to the PMT group. This leads to roughly the same decrease for events that have same track length to the PMT group, e.g. LED N to ADC S and LED S to ADC N. Second, the PMTs as well as the junction of scintillator module and PMT group have aged individually, which leads to different variation of ADC values at two ends of a module. Last, the light output of an LED may vary over time and thus leads to the simultaneous change of measured values in two PMT groups.
 
-The slopes of middle LED in two ends of M8 are about the same, implying that the two PMT groups of M8 have aged similarly. Therefore the aging effect of the plastic scintillator can be estimated by subtracting the slope of same LED at far end from the one at near end.
+The slopes of middle LED in two ends of M8 are about the same, implying that the two PMT groups of M8 have aged similarly. Therefore the aging effect of the plastic scintillator can be estimated by subtracting the slope of same LED at the far end from the one at the near end.
 Furthermore the decrease is noticeably more rapid at earlier stage (about 2010-2011) and becomes flat later. The reason can be that the transparency loss of scintillator is not linear over time. The assumption of linear trend is thus only an approximation.
 Averaging over time, the decrease due to aging of plastic scintillator is estimated to be $\approx \SI{3}{channels\per month}$.
-During the total period of experiment ($\approx\SI{90}{months}$) the change of ADC values is about $\SI{250}{channels}$ for M8.
+During the total period of experiment (about $\SI{90}{months}$), the change of ADC values caused by scintillator aging is about $\SI{250}{channels}$ for M8.
 
-Same procedure is applied on other three modules M7,M15 and M16 and shows similar results. Since other modules are longer then the four modules, the decrease of ADC values are expected to be more significant. The detection efficiency reduces especially for events to be measured in far PMT group, as the transportation length of light is longer.
+Same procedure is applied on other three modules M7,M15 and M16 and shows similar results. Since other modules are longer then the four modules, the decrease of ADC values are expected to be more significant. The detection efficiency reduces especially for events to be measured in the far PMT group, as the transportation length of light is longer.
